@@ -11,7 +11,7 @@ services:
       - app-network
     extra_hosts:
       - "host.docker.internal:host-gateway"
-      - "keycloak.lab:host-gateway"
+      - "${KEYCLOAK_HOST}:host-gateway"
 
 networks:
   app-network:
