@@ -1,6 +1,6 @@
 services:
   backend:
-    image: emicamsay/comparathor-backend:latest
+    image: emicamsay/comparathor-backend:${VERSION}
     container_name: comparathor-backend
     restart: always
     ports:

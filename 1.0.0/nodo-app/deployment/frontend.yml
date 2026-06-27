@@ -1,6 +1,6 @@
 services:
   frontend:
-    image: emicamsay/comparathor-angular:latest
+    image: emicamsay/comparathor-angular:${VERSION}
     container_name: comparathor-angular
     restart: always
     ports:
