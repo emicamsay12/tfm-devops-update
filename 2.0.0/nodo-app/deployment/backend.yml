@@ -1,0 +1,19 @@
+services:
+  backend:
+    image: emicamsay/comparathor-backend:latest
+    container_name: comparathor-backend
+    restart: always
+    ports:
+      - "8080:8080"
+    env_file:
+      - /opt/app/back/.env
+    networks:
+      - app-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+      - "keycloak.lab:host-gateway"
+
+networks:
+  app-network:
+    driver: bridge
+    name: app-network

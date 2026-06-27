@@ -1,0 +1,15 @@
+services:
+  logstash:
+    image: docker.elastic.co/logstash/logstash:8.12.0
+    container_name: logstash
+    restart: always
+    ports:
+      - "5000:5000"
+      - "9600:9600"
+    networks:
+      - elk-network
+
+networks:
+  elk-network:
+    driver: bridge
+    name: elk-network

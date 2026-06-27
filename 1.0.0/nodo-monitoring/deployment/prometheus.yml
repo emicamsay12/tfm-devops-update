@@ -1,0 +1,19 @@
+services:
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus:latest
+    restart: always
+    ports:
+      - "9090:9090"
+    volumes:
+      - prometheus_data:/opt/bitnami/prometheus/data
+    networks:
+      - monitoring-network
+
+volumes:
+  prometheus_data:
+
+networks:
+  monitoring-network:
+    driver: bridge
+    name: monitoring-network

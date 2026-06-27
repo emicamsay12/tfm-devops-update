@@ -1,0 +1,5 @@
+{
+  "url": "http://keycloak.lab:7080",
+  "realm": "comparathor",
+  "clientId": "oauth2-angular"
+}

@@ -1,0 +1,22 @@
+services:
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    restart: always
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+    networks:
+      - monitoring-network
+
+volumes:
+  grafana_data:
+
+networks:
+  monitoring-network:
+    driver: bridge
+    name: monitoring-network

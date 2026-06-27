@@ -1,0 +1,15 @@
+services:
+  frontend:
+    image: emicamsay/comparathor-angular:latest
+    container_name: comparathor-angular
+    restart: always
+    ports:
+      - "4200:80"
+    volumes:
+      - /opt/app/keycloak-config.json:/usr/share/nginx/html/keycloak-config.json
+    networks:
+      - app-network
+networks:
+  app-network:
+    driver: bridge
+    name: app-network

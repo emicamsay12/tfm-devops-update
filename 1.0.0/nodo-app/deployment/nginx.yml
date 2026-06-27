@@ -1,0 +1,16 @@
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - /opt/app/nginx:/etc/nginx/conf.d
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+    name: app-network
